@@ -1,6 +1,6 @@
 {
   "name": "@zaephor-ah/ah-session-plugin",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Zaephor <Zaephor@users.noreply.github.com>",
   "homepage": "https://github.com/Zaephor/ah-plugins#readme",
@@ -32,7 +32,6 @@
   "peerDependencies": {
     "actionhero": ">=19.1.4"
   },
-  "dependencies": {},
   "devDependencies": {
     "actionhero": ">=19.1.4"
   }
