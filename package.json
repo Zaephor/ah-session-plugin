@@ -1,0 +1,40 @@
+{
+  "name": "@zaephor-ah/ah-session-plugin",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Zaephor <Zaephor@users.noreply.github.com>",
+  "homepage": "https://github.com/Zaephor/ah-plugins#readme",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": ".index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaephor/ah-plugins.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zaephor/ah-plugins/issues"
+  },
+  "files": [
+    ".index.js",
+    ".scripts",
+    "config",
+    "initializers"
+  ],
+  "scripts": {
+    "postinstall": "node .scripts/postinstall.js",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "peerDependencies": {
+    "actionhero": ">=19.1.4"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "actionhero": ">=19.1.4"
+  }
+}
