@@ -55,7 +55,6 @@ module.exports = class sessionInitializer extends Initializer {
           sessionData.userAgent = connection.rawConnection.req.headers['user-agent']
         }
 
-        await user.update({ lastlogin_at: new Date() })
         await redis.set(key, JSON.stringify(sessionData))
         await redis.expire(key, api.session.duration)
         return sessionData
