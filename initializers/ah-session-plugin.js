@@ -5,7 +5,7 @@ const path = require('path')
 const crypto = require('crypto')
 const util = require('util')
 
-let config = ((api.config && api.config['ah-session-plugin'])) ? api.config['ah-session-plugin'] : require(path.join(__dirname, '..', 'config', 'ah-session-plugin.js'))[process.env.NODE_ENV || 'development']['ah-session-plugin'](api)
+const config = ((api.config && api.config['ah-session-plugin'])) ? api.config['ah-session-plugin'] : require(path.join(__dirname, '..', 'config', 'ah-session-plugin.js'))[process.env.NODE_ENV || 'development']['ah-session-plugin'](api)
 
 module.exports = class sessionInitializer extends Initializer {
   constructor () {
@@ -25,9 +25,9 @@ module.exports = class sessionInitializer extends Initializer {
       duration: config.duration,
       load: async (connection) => { // Primarily used by the middleware to load the session to data.session
         const key = api.session.prefix + connection.fingerprint
-        let data = await redis.get(key)
+        const data = await redis.get(key)
         if (!data) { return false } else {
-          let dataObj = JSON.parse(data)
+          const dataObj = JSON.parse(data)
           if (
             (config.lockIp && dataObj.clientIp !== connection.remoteIP) ||
             (config.lockAgent && data.connection.type === 'web' && dataObj.userAgent !== connection.rawConnection.req.headers['user-agent'])
