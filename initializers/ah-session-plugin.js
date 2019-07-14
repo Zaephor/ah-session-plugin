@@ -5,8 +5,6 @@ const path = require('path')
 const crypto = require('crypto')
 const util = require('util')
 
-const config = ((api.config && api.config['ah-session-plugin'])) ? api.config['ah-session-plugin'] : require(path.join(__dirname, '..', 'config', 'ah-session-plugin.js'))[process.env.NODE_ENV || 'development']['ah-session-plugin'](api)
-
 module.exports = class sessionInitializer extends Initializer {
   constructor () {
     super()
@@ -17,6 +15,11 @@ module.exports = class sessionInitializer extends Initializer {
   }
 
   async initialize () {
+    if (api.config && !api.config[this.name]) {
+      api.config[this.name] = require(path.join(api.config.plugins[this.name].path, 'config', this.name + '.js'))[process.env.NODE_ENV || 'default'][this.name](api)
+    }
+    const config = api.config[this.name]
+
     api.log('[' + this.loadPriority + '] ' + this.name + ': Initializing')
     const redis = api.redis.clients.client
 
