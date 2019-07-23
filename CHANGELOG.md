@@ -1,7 +1,20 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## 0.2.0 (2019-07-23)
+
+
+### Bug Fixes
+
+* **ah-session-plugin:** unrelated leftover code ([1a2fab2](https://github.com/Zaephor/ah-plugins/commit/1a2fab2))
+
+
+### Features
+
+* **ah-session-plugin:** initial commit ([152ecc1](https://github.com/Zaephor/ah-plugins/commit/152ecc1))
+
+
 
 ## [0.1.1](https://github.com/Zaephor/ah-plugins/compare/@zaephor-ah/ah-session-plugin@0.1.0...@zaephor-ah/ah-session-plugin@0.1.1) (2019-07-16)
 
