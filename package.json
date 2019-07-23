@@ -27,6 +27,7 @@
     "update-dep": "npx -p npm-check-updates ncu -u && npm install",
     "postinstall": "node .scripts/postinstall.js",
     "pretest": "standard",
+    "release": "standard-version",
     "test": "NODE_ENV=test mocha --colors --reporter spec --exit __tests__/*.js"
   },
   "engines": {
@@ -44,7 +45,8 @@
     "husky": "latest",
     "lint-staged": "latest",
     "mocha": "latest",
-    "standard": "latest"
+    "standard": "latest",
+    "standard-version": "^6.0.1"
   },
   "standard": {
     "ignore": [
