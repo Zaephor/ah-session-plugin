@@ -6,13 +6,32 @@ node_js:
 cache:
   directories:
   - "node_modules"
-script:
-- npm test
-deploy:
-  provider: npm
-  email: "$NPM_EMAIL"
-  api_key: "$NPM_TOKEN"
-  skip_cleanup: true
-  on:
-    node: "10"
-    tags: true
+
+stages:
+- name: update-deps
+  if: (branch = master) AND (type = cron)
+- name: test
+  if: (branch = master) AND (type != cron)
+- name: deploy-npm
+  if: (tag =~ ^v) AND (branch = master)
+
+jobs:
+  include:
+  - stage: update-deps
+    name: Update package dependencies
+    script:
+    - npm run update-dep
+    - npm test
+  - stage: test
+    name: Test
+    script:
+    - npm test
+  - stage: deploy-npm
+    name: Deploy to npm
+    deploy:
+      provider: npm
+      email: "$NPM_EMAIL"
+      api_key: "$NPM_TOKEN"
+      skip_cleanup: true
+      on:
+        tags: true
