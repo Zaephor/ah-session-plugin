@@ -28,7 +28,7 @@
     "postinstall": "node .scripts/postinstall.js",
     "pretest": "standard",
     "release": "standard-version",
-    "test": "NODE_ENV=test mocha --colors --reporter spec --exit __tests__/*.js"
+    "test": "NODE_ENV=test mocha --colors --reporter spec --exit"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -50,7 +50,7 @@
   },
   "standard": {
     "ignore": [
-      "**/__tests__/**",
+      "test/**",
       "**/ActionheroWebsocketClient.*"
     ],
     "globals": [
