@@ -41,13 +41,13 @@ module.exports = class sessionInitializer extends Initializer {
           }
         }
       },
-      create: async (connection, user) => { // Should be called by the user-auth system. User should be serializable. Ideally userID or name or email or something
+      create: async (connection, data) => { // Should be called by the user-auth system. Data should be serializable. Ideally userID or some other identifier
         const key = api.session.prefix + connection.fingerprint
         const randomBuffer = await util.promisify(crypto.randomBytes)(64)
         const csrfToken = randomBuffer.toString('hex')
 
         const sessionData = {
-          user: user,
+          data: data,
           csrfToken: csrfToken,
           sesionCreatedAt: new Date().getTime()
         }
