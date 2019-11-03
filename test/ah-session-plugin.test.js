@@ -1,6 +1,6 @@
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions */
-// const fs = require('fs')
+const fs = require('fs')
 const path = require('path')
 const { expect } = require('chai')
 const ActionHero = require('actionhero')
@@ -20,6 +20,8 @@ describe('ah-session-plugin', () => {
   }
 
   before(async () => {
+    if (!fs.existsSync('./public')) { fs.mkdirSync('./public') }
+    if (!fs.existsSync('./public/javascript')) { fs.mkdirSync('./public/javascript') }
     api = await actionhero.start({ configChanges })
   })
 

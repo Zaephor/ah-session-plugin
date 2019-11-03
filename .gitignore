@@ -2,3 +2,5 @@
 .idea/*
 lerna-debug.log
 npm-debug.log
+public/javascript/*
+log/*
