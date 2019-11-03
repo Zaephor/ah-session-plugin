@@ -32,11 +32,12 @@ describe('ah-session-plugin', () => {
   })
 
   // Generic module loaded check
-  Array('session').forEach(function (attribute) {
+  const scopes = ['session']
+  for (const attribute of scopes) {
     it(attribute + ' should be in api scope', async () => {
       expect(api[attribute]).to.exist
     })
-  })
+  }
 
   it('test an unprotected endpoint')
   it('test a session-protected endpoint')

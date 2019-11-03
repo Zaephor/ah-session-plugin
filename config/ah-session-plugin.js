@@ -1,6 +1,6 @@
 'use strict'
 
-exports['default'] = {
+exports.default = {
   'ah-session-plugin': (api) => {
     return {
       // Customize the session key prefixes. ':' will be appended automatically
@@ -19,7 +19,7 @@ exports['default'] = {
   }
 }
 
-exports['test'] = {
+exports.test = {
   'ah-session-plugin': (api) => {
     return {
       // Customize the session key prefixes. ':' will be appended automatically
