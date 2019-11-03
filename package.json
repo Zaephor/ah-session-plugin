@@ -34,13 +34,13 @@
     "node": ">=10.0.0"
   },
   "peerDependencies": {
-    "actionhero": ">=19.2.1"
+    "actionhero": ">=20.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@commitlint/prompt-cli": "^8.1.0",
-    "actionhero": ">=19.2.1",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@commitlint/prompt-cli": "^8.2.0",
+    "actionhero": ">=20.0.0",
     "chai": "latest",
     "husky": "latest",
     "lint-staged": "latest",
