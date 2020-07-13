@@ -46,7 +46,7 @@
     "lint-staged": "latest",
     "mocha": "latest",
     "standard": "latest",
-    "standard-version": "^7.0.0"
+    "standard-version": "^8.0.1"
   },
   "standard": {
     "ignore": [
